@@ -32,6 +32,9 @@ if (process.env.NODE_ENV !== 'production') {
 app.get('/api/health', (req, res) => {
   res.json({ success: true, message: 'Bookit API running' });
 });
+app.get('/', (req, res) => {
+  res.json({ success: true, message: 'Bookit API is running. See /api/health.' });
+});
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
